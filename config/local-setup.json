@@ -1,0 +1,6 @@
+{
+  "miniFrontend": {
+    "name": "Menu",
+    "host": "http://localhost:9081"
+  }
+}
