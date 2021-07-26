@@ -17,6 +17,11 @@ class MicroFrontend extends React.Component {
         script.onload = this.renderMicroFrontend;
         document.head.appendChild(script);
     }
+    
+    componentWillUnmount() {
+        const {name} = this.props;
+        window[`unmount${name}`](`${name}-container`);
+    }
 
     renderMicroFrontend = () => {
         const {name, history, basePath} = this.props;
