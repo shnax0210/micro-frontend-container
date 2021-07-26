@@ -19,8 +19,8 @@ class MicroFrontend extends React.Component {
     }
 
     renderMicroFrontend = () => {
-        const {name, history} = this.props;
-        window[`render${name}`](`${name}-container`, history);
+        const {name, history, basePath} = this.props;
+        window[`render${name}`](`${name}-container`, history, basePath);
     };
 
     render() {
@@ -28,8 +28,8 @@ class MicroFrontend extends React.Component {
     }
 }
 
-window.renderMicroFrontend = function (containerId, host, name, history) {
-    ReactDOM.render(<MicroFrontend host={host} name={name} history={history}/>, document.getElementById(containerId));
+window.renderMicroFrontend = function (containerId, host, name, history, basePath) {
+    ReactDOM.render(<MicroFrontend host={host} name={name} history={history} basePath={basePath}/>, document.getElementById(containerId));
 }
 
 exports.renderMicroFrontend = window.renderMicroFrontend;

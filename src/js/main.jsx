@@ -1,7 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const Router = require('react-router-dom').Router;
 const createBrowserHistory = require('history').createBrowserHistory;
 
 const renderMicroFrontend = require('./micro-frontend.jsx').renderMicroFrontend;
